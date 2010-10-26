@@ -66,8 +66,7 @@ void addAnswer(int pawns[12][4]) {
 		_balls[_Zet][0] = (int) a; //rand() % 6 + 1;
 		_balls[_Zet][1] = (int) b;//rand() % 6 + 1;
 		_balls[_Zet][2] = (int) c; //rand() % 6 + 1;
-		_balls[_Zet][3] = (int) d; //rand() % 6 + 1;*/
-		printf("test");	
+		_balls[_Zet][3] = (int) d; //rand() % 6 + 1;*/	
 	}
         else if(_Zet == 1){
 		_balls[_Zet][0] = (int) b;
@@ -81,9 +80,14 @@ void addAnswer(int pawns[12][4]) {
 		_balls[_Zet][1] = (int) d;
 		_balls[_Zet][2] = (int) e;
 		_balls[_Zet][3] = (int) f;		
-	} else {	// Artificial Intelligents
-				
-	}
+	} // Artificial Intelligents
+	Code cd;
+	cd[0] = (eColor) _balls[_Zet][0];
+	cd[1] = (eColor) _balls[_Zet][1];
+	cd[2] = (eColor) _balls[_Zet][2];
+	cd[3] = (eColor) _balls[_Zet][3];		
+	addRecordToHistory(cd, pins);
+			
 	addGuess(_balls);
 } 
 
