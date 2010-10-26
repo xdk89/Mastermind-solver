@@ -28,7 +28,7 @@ void addRecordToHistory(eColor, eColor, eColor, eColor, ePin, ePin, ePin, ePin);
 void generateTable(); 
 
 Code m_table [1300];
-int tablepointer = -1; 
+int tablepointer = 0; 
 
 //--------------------------------------------------------------------------------------------------------------functions
 
@@ -50,13 +50,11 @@ void generateTable(){
 }
 
 void printTable(){
-	for(int i; i< tablepointer; i++){
+	for(int i=0; i< tablepointer; i++){
 		printCode(m_table[i]);
+		printLine();
 	}
 }
-
-
-
 
 int countBlackPins(History *hs, int index){
 	int count = 0;

@@ -67,18 +67,11 @@ void calculateIfAllPinsAreWhite(History *hs){
 		}
 
 	}
-	printShouldNotOnPos(ColorAShouldNotOnPos);
-	printShouldNotOnPos(ColorBShouldNotOnPos);
-	printShouldNotOnPos(ColorCShouldNotOnPos);
-	printShouldNotOnPos(ColorDShouldNotOnPos);
-	printShouldNotOnPos(ColorEShouldNotOnPos);
-	printShouldNotOnPos(ColorFShouldNotOnPos);
 }
 
 void calculateIntroAndOutroducer(History *hs){
 	for(int i=0; i < 2; i++){
 		if((countWhitePins(hs, i) + countBlackPins(hs, i)) > (countWhitePins(hs, (i+1)) + countBlackPins(hs, (i+1)))) {
-			printf("deel 1 \n");
 			for(int k=0; k<4; k++){
 				if(ColorsCertainlyInCode[k] == empty){
 					ColorsCertainlyInCode[k] = hs[i].code[0];
@@ -86,7 +79,6 @@ void calculateIntroAndOutroducer(History *hs){
 				}
 			}	
 		} else if((countWhitePins(hs, i) + countBlackPins(hs, i)) < countWhitePins(hs, (i+1)) + countBlackPins(hs, (i+1))){
-			printf("deel 2\n");
 			for(int k=0; k<4; k++){
 				if(ColorsCertainlyInCode[k] == empty){
 					ColorsCertainlyInCode[k] = hs[i+1].code[3];

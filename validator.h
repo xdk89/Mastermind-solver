@@ -129,12 +129,12 @@ void printColorsCertainlyNotInCode(){
  *
  * */
 bool validateCode(Code cd, History *hs){
-	if(!checkPins(cd, hs))		       { printf("err 0");	return false; }
-	if(!checkColorsCertainlyInCode(cd))    { printf("err 1"); 	return false; }
-	if(!checkColorsCertainlyNotInCode(cd)) { printf("err 2");	return false; }	
-	if(!checkColorShouldOnPos(cd))	       { printf("err 3");	return false; }
-	if(!checkColorShouldNotOnPos(cd))      { printf("err 4");	return false; }
-	if(!checkNumberOfColors(cd))	       { printf("err 5");	return false; }
+	if(!checkPins(cd, hs))		       { return false; }
+	if(!checkColorsCertainlyInCode(cd))    { return false; }
+	if(!checkColorsCertainlyNotInCode(cd)) { return false; }	
+	if(!checkColorShouldOnPos(cd))	       { return false; }
+	if(!checkColorShouldNotOnPos(cd))      { return false; }
+	if(!checkNumberOfColors(cd))	       { return false; }
 	return true;
 }
 
@@ -142,35 +142,32 @@ bool checkPins(Code cd, History *hs){
 	int whitePins=0, blackPins= 0;
 	int white, black;
 	for(int i=0; i <= historypointer; i++){
-		Code cd2;
-		cd2[0] = cd[0];
-		cd2[1] = cd[1];
-		cd2[2] = cd[2];
-		cd2[3] = cd[3];
+		bool pos0 = true, pos1 = true, pos2= true, pos3= true;
 
 		blackPins = countBlackPins(hs, i);
 		whitePins = countWhitePins(hs, i);
 		black= 0;
 		white= 0;
 		for(int k=0; k<4; k++){
-			if(hs[i].code[k] == cd2[k]){
+			if(hs[i].code[k] == cd[k]){
 				black++;
-				cd2[k] == empty;
-			} else if(hs[i].code[k] == cd2[0] || hs[i].code[k] == cd2[1] || hs[i].code[k] == cd2[2] || hs[i].code[k] == cd2[3]){
+				switch(k){
+					case 0: pos0 = false;
+					case 1: pos1 = false;
+					case 2: pos2 = false;
+					case 3: pos3 = false;
+				}
+			} else 	if(hs[i].code[k] == cd[0] && pos0 == true) { 
 				white++;
-			}
-			
+			} else if(hs[i].code[k] == cd[1] && pos1 == true) {
+				white++;
+			} else if(hs[i].code[k] == cd[2] && pos2 == true){
+				white++;
+			} else if(hs[i].code[k] == cd[3] && pos3 == true){
+				white++;
+			} 
 		}
 		if(white != whitePins || black != blackPins){
-			printf("%d", i);
-			printLine();
-			printCode(cd2);
-			printLine();
-			printf("%d - %d ", blackPins, black);
-			printLine();
-			printf("%d - %d", whitePins, white);
-			printLine();
-			printLine();
 			return false;
 		}
 	}
@@ -192,7 +189,6 @@ bool checkColorsCertainlyInCode(Code cd){
 	}
 	if(count == 0)
 		return true;
-	printf("false due to colors certainly in code");
 	return false;
 }
 
@@ -202,7 +198,6 @@ bool checkColorsCertainlyNotInCode(Code cd){
 			for(int i=0; i<4; i++){
 				if(cd[i] == ColorsCertainlyNotInCode[k]){
 					printf("false due to colors certainly not in code");
-					return false;
 				}
 			}
 		}

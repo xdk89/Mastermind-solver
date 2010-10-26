@@ -54,21 +54,12 @@ void addGuess(int balls[12][4]) {
 
 //ontvang alle antwoorden tot nu toe!
 void addAnswer(int pawns[12][4]) {
-/*	int i = 0;
-	for(i=0; i<12; i++) {
-	 int j = 0;
-	 for(j=0; j<4; j++) {
-	  _pawns[i][j] =  pawns[i][j];
-	 }
-	}
-	*/
 	if(_Zet == 0){
-		_balls[_Zet][0] = (int) a; //rand() % 6 + 1;
-		_balls[_Zet][1] = (int) b;//rand() % 6 + 1;
-		_balls[_Zet][2] = (int) c; //rand() % 6 + 1;
-		_balls[_Zet][3] = (int) d; //rand() % 6 + 1;*/	
 		generateTable();
-		printTable();
+		_balls[_Zet][0] = (int) a; 
+		_balls[_Zet][1] = (int) b;
+		_balls[_Zet][2] = (int) c; 
+		_balls[_Zet][3] = (int) d; 
 	}
         else if(_Zet == 1){
 		_balls[_Zet][0] = (int) b;
@@ -82,7 +73,32 @@ void addAnswer(int pawns[12][4]) {
 		_balls[_Zet][1] = (int) d;
 		_balls[_Zet][2] = (int) e;
 		_balls[_Zet][3] = (int) f;		
-	} // Artificial Intelligents
+	} /*else {
+		int count = 0;
+		calculate(m_history);
+		for(int i=0; i<tablepointer; i++){
+			if(m_table[i][0] != empty){			
+				if(!validateCode(m_table[i], m_history)){
+					Code cd;
+					cd[0] = empty; cd[1] = empty; cd[2] = empty; cd[3] = empty;
+					m_table[i][0] = cd[0];					
+				} else {
+					count++;
+				}
+			}
+		}
+		for(int i=0; i<tablepointer; i++){
+			if(m_table[i][0] != empty){
+				_balls[_Zet][0] = m_table[i][0];
+				_balls[_Zet][1] = m_table[i][1];
+				_balls[_Zet][2] = m_table[i][2];
+				_balls[_Zet][3] = m_table[i][3];
+				break;
+			}
+		}
+		printf("%d", count);
+	}*/
+	 // Artificial Intelligents
 	Code cd;
 	Pins pins;
 	cd[0] = (eColor) _balls[_Zet][0];
@@ -96,12 +112,6 @@ void addAnswer(int pawns[12][4]) {
 
 	addRecordToHistory(cd, pins);
 
-//	addRecordToHistory(f,f,f,f, white,white,white,white);
-
-
-//		m_history[historypointer-1].pins[0] = white;
-
-
 	if((_Zet-1) >=0) {
 		m_history[historypointer-1].pins[0] = (ePin) _pawns[_Zet-1][0];
 		m_history[historypointer-1].pins[1] = (ePin) _pawns[_Zet-1][1];
@@ -109,16 +119,38 @@ void addAnswer(int pawns[12][4]) {
 		m_history[historypointer-1].pins[3] = (ePin) _pawns[_Zet-1][3];
 	}
 	
+	if(_Zet > 2){
+		int count = 0;
+		calculate(m_history);
+		for(int i=0; i<tablepointer; i++){
+			if(m_table[i][0] != empty){
+				if(!validateCode(m_table[i], m_history)){
+					Code cd;
+					cd[0] = empty;
+					m_table[i][0] = cd[0];
+				} else {
+					count++;
+				}
+			}
+		}
+		for(int i=0; i<tablepointer; i++){
+			if(m_table[i][0] != empty){
+				_balls[_Zet][0] = m_table[i][0];
+				_balls[_Zet][1] = m_table[i][1];
+				_balls[_Zet][2] = m_table[i][2];
+				_balls[_Zet][3] = m_table[i][3];
+				Code cd;
+				cd[0] = empty;
+				m_table[i][0] = cd[0];
+				break;
+			}
+		}
+		printf("%d", count);
 
-//	printf("%d", _pawns[0][0]);
-
-
+	}
 	
-//	printHistory();
 	printLine();
-			
-	addGuess(_balls);
-//	_isAanzet = true;
+	_isAanzet = true;
 } 
 
 void handleKeypress(unsigned char key, int x, int y) {
