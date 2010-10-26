@@ -59,13 +59,29 @@ void addAnswer(int pawns[12][4]) {
 	  _pawns[i][j] =  pawns[i][j];
 	 }
 	}
-
 	*/
-
-	_balls[_Zet][0] =1; //rand() % 6 + 1;
-	_balls[_Zet][1] =1;//rand() % 6 + 1;
-	_balls[_Zet][2] =1; //rand() % 6 + 1;
-	_balls[_Zet][3] =1; //rand() % 6 + 1;*/
+	if(_Zet == 0){
+		_balls[_Zet][0] = (int) a; //rand() % 6 + 1;
+		_balls[_Zet][1] = (int) b;//rand() % 6 + 1;
+		_balls[_Zet][2] = (int) c; //rand() % 6 + 1;
+		_balls[_Zet][3] = (int) d; //rand() % 6 + 1;*/
+		printf("test");	
+	}
+        else if(_Zet == 1){
+		_balls[_Zet][0] = (int) b;
+		_balls[_Zet][1] = (int) c;
+		_balls[_Zet][2] = (int) d;
+		_balls[_Zet][3] = (int) e;
+		
+	}
+	else if(_Zet == 2){
+		_balls[_Zet][0] = (int) c;
+		_balls[_Zet][1] = (int) d;
+		_balls[_Zet][2] = (int) e;
+		_balls[_Zet][3] = (int) f;		
+	} else {	// Artificial Intelligents
+				
+	}
 	addGuess(_balls);
 } 
 
