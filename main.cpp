@@ -67,6 +67,8 @@ void addAnswer(int pawns[12][4]) {
 		_balls[_Zet][1] = (int) b;//rand() % 6 + 1;
 		_balls[_Zet][2] = (int) c; //rand() % 6 + 1;
 		_balls[_Zet][3] = (int) d; //rand() % 6 + 1;*/	
+		generateTable();
+		printTable();
 	}
         else if(_Zet == 1){
 		_balls[_Zet][0] = (int) b;
@@ -82,41 +84,41 @@ void addAnswer(int pawns[12][4]) {
 		_balls[_Zet][3] = (int) f;		
 	} // Artificial Intelligents
 	Code cd;
-	Pins pins, pinsPrevious;
+	Pins pins;
 	cd[0] = (eColor) _balls[_Zet][0];
 	cd[1] = (eColor) _balls[_Zet][1];
 	cd[2] = (eColor) _balls[_Zet][2];
 	cd[3] = (eColor) _balls[_Zet][3];
+	pins[0] = none;
+	pins[1] = none;
+	pins[2] = none;
+	pins[3] = none;
 
 	addRecordToHistory(cd, pins);
 
-//	pinsPrevious[0] = (ePin) _pawns[_Zet][0];
-//	pinsPrevious[1] = (ePin) _pawns[_Zet][1];
-//	pinsPrevious[2] = (ePin) _pawns[_Zet][2];
-//	pinsPrevious[3] = (ePin) _pawns[_Zet][3];
-
+//	addRecordToHistory(f,f,f,f, white,white,white,white);
 
 
 //		m_history[historypointer-1].pins[0] = white;
 
 
-	printf("%d", _pawns[_Zet][0]);	
+	if((_Zet-1) >=0) {
+		m_history[historypointer-1].pins[0] = (ePin) _pawns[_Zet-1][0];
+		m_history[historypointer-1].pins[1] = (ePin) _pawns[_Zet-1][1];
+		m_history[historypointer-1].pins[2] = (ePin) _pawns[_Zet-1][2];
+		m_history[historypointer-1].pins[3] = (ePin) _pawns[_Zet-1][3];
+	}
+	
 
-//	m_history[historypointer-1].pins[0] = black;// (ePin) _pawns[_Zet][0];
-//	m_history[historypointer-1].pins[1] = (ePin) _pawns[_Zet][1];
-//	m_history[historypointer-1].pins[2] = (ePin) _pawns[_Zet][2];
-//	m_history[historypointer-1].pins[3] = (ePin) _pawns[_Zet][3];
+//	printf("%d", _pawns[0][0]);
 
-/*	pins[0] = (ePin) _pawns[_Zet-1][0];
-	pins[1] = (ePin) _pawns[_Zet-1][1];
-	pins[2] = (ePin) _pawns[_Zet-1][2];
-	pins[3] = (ePin) _pawns[_Zet-1][3];		
-*/	
-	printHistory();
+
+	
+//	printHistory();
 	printLine();
 			
-//	addGuess(_balls);
-	_isAanzet = true;
+	addGuess(_balls);
+//	_isAanzet = true;
 } 
 
 void handleKeypress(unsigned char key, int x, int y) {
@@ -558,6 +560,7 @@ void update(int value) {
 }
 
 int main(int argc, char** argv) {
+
 	addAnswer(_pawns); //to start
 
 	glutInit(&argc, argv);
