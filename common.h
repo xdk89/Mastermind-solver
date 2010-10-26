@@ -6,7 +6,7 @@
 
 //--------------------------------------------------------------------------------------------------------------definitions
 
-enum eColor { empty, a, b, c, d, e, f };
+enum eColor { empty, a=1, b=2, c=3, d=4, e=5, f=6 };
 enum ePin   { none, white, black      };
 
 typedef eColor Code [4];
@@ -25,9 +25,37 @@ void printHistory();
 void addRecordToHistory(Code, Pins);
 void addRecordToHistory(eColor, eColor, eColor, eColor, ePin, ePin, ePin, ePin);
 
+void generateTable(); 
 
+Code m_table [1300];
+int tablepointer = -1; 
 
 //--------------------------------------------------------------------------------------------------------------functions
+
+void generateTable(){
+	int counter= 0;
+	for(int i=0; i<6; i++){
+		for(int k=0; k<6; k++){
+			for(int l=0; l<6; l++){
+				for(int m=0; m<6; m++){
+					m_table[counter][0] =  (eColor) (i+1);
+					m_table[counter][1] =  (eColor) (k+1);
+					m_table[counter][2] =  (eColor) (l+1);
+					m_table[counter++][3] = (eColor) (m+1);
+				}
+			}
+		}
+	}
+	tablepointer = counter;
+}
+
+void printTable(){
+	for(int i; i< tablepointer; i++){
+		printCode(m_table[i]);
+	}
+}
+
+
 
 
 int countBlackPins(History *hs, int index){
