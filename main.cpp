@@ -82,13 +82,41 @@ void addAnswer(int pawns[12][4]) {
 		_balls[_Zet][3] = (int) f;		
 	} // Artificial Intelligents
 	Code cd;
+	Pins pins, pinsPrevious;
 	cd[0] = (eColor) _balls[_Zet][0];
 	cd[1] = (eColor) _balls[_Zet][1];
 	cd[2] = (eColor) _balls[_Zet][2];
-	cd[3] = (eColor) _balls[_Zet][3];		
+	cd[3] = (eColor) _balls[_Zet][3];
+
 	addRecordToHistory(cd, pins);
+
+//	pinsPrevious[0] = (ePin) _pawns[_Zet][0];
+//	pinsPrevious[1] = (ePin) _pawns[_Zet][1];
+//	pinsPrevious[2] = (ePin) _pawns[_Zet][2];
+//	pinsPrevious[3] = (ePin) _pawns[_Zet][3];
+
+
+
+//		m_history[historypointer-1].pins[0] = white;
+
+
+	printf("%d", _pawns[_Zet][0]);	
+
+//	m_history[historypointer-1].pins[0] = black;// (ePin) _pawns[_Zet][0];
+//	m_history[historypointer-1].pins[1] = (ePin) _pawns[_Zet][1];
+//	m_history[historypointer-1].pins[2] = (ePin) _pawns[_Zet][2];
+//	m_history[historypointer-1].pins[3] = (ePin) _pawns[_Zet][3];
+
+/*	pins[0] = (ePin) _pawns[_Zet-1][0];
+	pins[1] = (ePin) _pawns[_Zet-1][1];
+	pins[2] = (ePin) _pawns[_Zet-1][2];
+	pins[3] = (ePin) _pawns[_Zet-1][3];		
+*/	
+	printHistory();
+	printLine();
 			
-	addGuess(_balls);
+//	addGuess(_balls);
+	_isAanzet = true;
 } 
 
 void handleKeypress(unsigned char key, int x, int y) {
@@ -535,10 +563,6 @@ int main(int argc, char** argv) {
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
 	glutInitWindowSize(600, 600);
 	
-
-
-	cout << "test";
-
 	glutCreateWindow("Mastermind");
 	initRendering();
 	
