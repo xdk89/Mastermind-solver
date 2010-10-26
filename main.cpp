@@ -1,9 +1,11 @@
 #include <iostream>
-#include <stdio.h>
 #include <stdlib.h>
 #include <GL/glut.h>
 #include "imageloader.h"
 #include "common.h"
+#include "validator.h"
+#include "calculator.h"
+
 
 using namespace std;
 float _Hangle = 165.0f;
