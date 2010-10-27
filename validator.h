@@ -141,7 +141,7 @@ bool validateCode(Code cd, History *hs){
 bool checkPins(Code cd, History *hs){
 	int whitePins=0, blackPins= 0;
 	int white, black;
-	for(int i=0; i <= historypointer; i++){
+	for(int i=0; i < /*historypointer*/ 3; i++){
 		bool pos0 = true, pos1 = true, pos2= true, pos3= true;
 
 		blackPins = countBlackPins(hs, i);

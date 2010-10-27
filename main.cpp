@@ -97,7 +97,7 @@ void addAnswer(int pawns[12][4]) {
 			}
 		}
 		printf("%d", count);
-	}*/
+	} */
 	 // Artificial Intelligents
 	Code cd;
 	Pins pins;
@@ -117,8 +117,7 @@ void addAnswer(int pawns[12][4]) {
 		m_history[historypointer-1].pins[1] = (ePin) _pawns[_Zet-1][1];
 		m_history[historypointer-1].pins[2] = (ePin) _pawns[_Zet-1][2];
 		m_history[historypointer-1].pins[3] = (ePin) _pawns[_Zet-1][3];
-	}
-	
+	}	
 	if(_Zet > 2){
 		int count = 0;
 		calculate(m_history);
@@ -145,9 +144,9 @@ void addAnswer(int pawns[12][4]) {
 				break;
 			}
 		}
-		printf("%d", count);
-
 	}
+
+	
 	
 	printLine();
 	_isAanzet = true;
