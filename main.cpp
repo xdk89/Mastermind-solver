@@ -98,36 +98,6 @@ void addAnswer(int pawns[12][4]) {
 		}
 		printf("%d", count);
 	} */
-
-	if(_Zet > 2){
-		int count = 0;
-		calculate(m_history);
-		for(int i=0; i<tablepointer; i++){
-			if(m_table[i][0] != empty){
-				if(!validateCode(m_table[i], m_history)){
-					Code cd;
-					cd[0] = empty;
-					m_table[i][0] = cd[0];
-				} else {
-						count++;
-				}
-			}
-		}
-		for(int i=0; i<tablepointer; i++){
-			if(m_table[i][0] != empty){
-				_balls[_Zet][0] = m_table[i][0];
-				_balls[_Zet][1] = m_table[i][1];
-				_balls[_Zet][2] = m_table[i][2];
-				_balls[_Zet][3] = m_table[i][3];
-				Code cd;
-				cd[0] = empty;
-				m_table[i][0] = cd[0];
-				break;
-			}
-		}
-		printf("%d", count);
-	}
-
 	 // Artificial Intelligents
 	Code cd;
 	Pins pins;
@@ -148,6 +118,42 @@ void addAnswer(int pawns[12][4]) {
 		m_history[historypointer-1].pins[2] = (ePin) _pawns[_Zet-1][2];
 		m_history[historypointer-1].pins[3] = (ePin) _pawns[_Zet-1][3];
 	}	
+	if(_Zet > 2){
+		int count = 0;
+		calculate(m_history);
+		for(int i=0; i<tablepointer; i++){
+			if(m_table[i][0] != empty){
+				if(!validateCode(m_table[i], m_history)){
+					Code cd;
+					cd[0] = empty;
+					m_table[i][0] = cd[0];
+				} else {
+					//					count++;
+					_balls[_Zet][0] = m_table[i][0];
+					_balls[_Zet][1] = m_table[i][1];
+					_balls[_Zet][2] = m_table[i][2];
+					_balls[_Zet][3] = m_table[i][3];
+					Code cd;
+					cd[0] = empty;
+					m_table[i][0] = cd[0];
+					break;
+				}
+			}
+		}
+/*		for(int i=0; i<tablepointer; i++){
+			if(m_table[i][0] != empty){
+				_balls[_Zet][0] = m_table[i][0];
+				_balls[_Zet][1] = m_table[i][1];
+				_balls[_Zet][2] = m_table[i][2];
+				_balls[_Zet][3] = m_table[i][3];
+				Code cd;
+				cd[0] = empty;
+				m_table[i][0] = cd[0];
+				break;
+			}
+		}*/
+		printf("%d", count);
+	}
 	printLine();
 	_isAanzet = true;
 } 
