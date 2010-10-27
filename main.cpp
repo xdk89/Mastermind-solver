@@ -557,7 +557,6 @@ void update(int value) {
 	 if(_isSpaceKeyPressed == true) {
 	  _isSpaceKeyPressed = false;
 	  _pawns[_Zet][_Position] = _pawns[_Zet][_Position] + 1;
-	  printf("%d",  _pawns[_Zet][_Position]);
 	  if(_pawns[_Zet][_Position] == 3) _pawns[_Zet][_Position] = 0;
 	 }
 	 if(_isEnterKeyPressed == true) {
