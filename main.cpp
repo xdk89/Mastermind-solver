@@ -128,11 +128,19 @@ void addAnswer(int pawns[12][4]) {
 					cd[0] = empty;
 					m_table[i][0] = cd[0];
 				} else {
-					count++;
+					//					count++;
+					_balls[_Zet][0] = m_table[i][0];
+					_balls[_Zet][1] = m_table[i][1];
+					_balls[_Zet][2] = m_table[i][2];
+					_balls[_Zet][3] = m_table[i][3];
+					Code cd;
+					cd[0] = empty;
+					m_table[i][0] = cd[0];
+					break;
 				}
 			}
 		}
-		for(int i=0; i<tablepointer; i++){
+/*		for(int i=0; i<tablepointer; i++){
 			if(m_table[i][0] != empty){
 				_balls[_Zet][0] = m_table[i][0];
 				_balls[_Zet][1] = m_table[i][1];
@@ -143,11 +151,9 @@ void addAnswer(int pawns[12][4]) {
 				m_table[i][0] = cd[0];
 				break;
 			}
-		}
+		}*/
+		printf("%d", count);
 	}
-
-	
-	
 	printLine();
 	_isAanzet = true;
 } 
