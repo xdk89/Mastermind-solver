@@ -89,6 +89,16 @@ int countWhitePins(History *hs, int index){
 	return count;
 }
 
+int countEmptyPins(History *hs, int index){
+	int count = 0;
+	for(int i=0; i<4; i++){
+		if(hs[index].pins[i] == none){
+			count++;
+		}
+	}
+	count;
+}
+
 void printCode(Code cd){
 	for( int i=0; i<4; i++){
 		switch(cd[i]){

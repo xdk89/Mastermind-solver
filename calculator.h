@@ -177,6 +177,6 @@ void calculateNumberOfColors(History *hs){
 void calculate(History *hs){
 //	calculateNumberOfColors(hs);
 //	calculateIf4MaxPins(hs);
-//	calculateIntroAndOutroducer(hs);
+	calculateIntroAndOutroducer(hs);
 //	calculateIfAllPinsAreWhite(hs);
 }
