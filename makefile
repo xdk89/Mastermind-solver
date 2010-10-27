@@ -10,4 +10,4 @@ imageloader.o: imageloader.h imageloader.cpp
 	g++ -o imageloader.o imageloader.cpp -c
 
 clean:
-	rm *.o mastermind
+	rm *.o mastermind *.log
