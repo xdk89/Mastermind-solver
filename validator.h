@@ -130,11 +130,11 @@ void printColorsCertainlyNotInCode(){
  * */
 bool validateCode(Code cd, History *hs){
 	if(!checkPins(cd, hs))		       { return false; }
-	if(!checkColorsCertainlyInCode(cd))    { return false; }
-	if(!checkColorsCertainlyNotInCode(cd)) { return false; }	
-	if(!checkColorShouldOnPos(cd))	       { return false; }
-	if(!checkColorShouldNotOnPos(cd))      { return false; }
-	if(!checkNumberOfColors(cd))	       { return false; }
+//	if(!checkColorsCertainlyInCode(cd))    { return false; }
+//	if(!checkColorsCertainlyNotInCode(cd)) { return false; }	
+//	if(!checkColorShouldOnPos(cd))	       { return false; }
+//	if(!checkColorShouldNotOnPos(cd))      { return false; }
+//	if(!checkNumberOfColors(cd))	       { return false; }
 	return true;
 }
 

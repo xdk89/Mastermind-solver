@@ -130,7 +130,7 @@ void addAnswer(int pawns[12][4]) {
 		pins[3] = (ePin) _pawns[_Zet-1][3];
 		
 		addRecordToHistory(cd,pins);
-		printHistory();
+//		printHistory();
 		printLine();
 		printLine();
 
@@ -144,8 +144,7 @@ void addAnswer(int pawns[12][4]) {
 					Code cd;
 					cd[0] = empty;
 					m_table[i][0] = cd[0];
-				} else {
-					count++;
+				} else {					
 					_balls[_Zet][0] = m_table[i][0];
 					_balls[_Zet][1] = m_table[i][1];
 					_balls[_Zet][2] = m_table[i][2];
@@ -157,6 +156,9 @@ void addAnswer(int pawns[12][4]) {
 				}
 			}
 		}
+
+				
+
 /*		for(int i=0; i<tablepointer; i++){
 			if(m_table[i][0] != empty){
 				_balls[_Zet][0] = m_table[i][0];
@@ -170,7 +172,7 @@ void addAnswer(int pawns[12][4]) {
 			}
 		}*/
 		printf("%d", count);
-        printFileTable();
+       		 printFileTable();
 	}
 	printLine();
 	_isAanzet = true;
