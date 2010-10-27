@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include <stdlib.h>
 #include <GL/glut.h>
 #include "imageloader.h"
@@ -38,6 +39,7 @@ bool _isBackspaceKeyPressed = false;
 int _balls[12][4];
 int _pawns[12][4];
 
+ofstream myfile;
 
 
 //ontvang alle geplaatste ballen tot nu toe!
@@ -127,6 +129,7 @@ void addAnswer(int pawns[12][4]) {
 					Code cd;
 					cd[0] = empty;
 					m_table[i][0] = cd[0];
+
 				} else {
 					//					count++;
 					_balls[_Zet][0] = m_table[i][0];
