@@ -139,44 +139,6 @@ bool validateCode(Code cd, History *hs){
 }
 
 bool checkPins(Code cd, History *hs){
-/*	int whitePins=0, blackPins= 0;
-	int white, black;
-	for(int i=0; i < historypointer; i++){
-		bool pos0 = true, pos1 = true, pos2= true, pos3= true;
-
-		blackPins = countBlackPins(hs, i);
-		whitePins = countWhitePins(hs, i);
-		black= 0;
-		white= 0;
-		for(int k=0; k<4; k++){
-			if(hs[i].code[k] == cd[k]){
-				black++;
-				switch(k){
-					case 0: pos0 = false;
-					case 1: pos1 = false;
-					case 2: pos2 = false;
-					case 3: pos3 = false;
-				}
-			} else 	if(hs[i].code[k] == cd[0] && pos0 == true) { 
-				white++;
-			} else if(hs[i].code[k] == cd[1] && pos1 == true) {
-				white++;
-			} else if(hs[i].code[k] == cd[2] && pos2 == true){
-				white++;
-			} else if(hs[i].code[k] == cd[3] && pos3 == true){
-				white++;
-			} 
-		}
-		if(white != whitePins || black != blackPins){
-			return false;
-		}
-	}
-	return true;*/
-
-
-//	if(cd[0] == empty){
-//		return false;
-//	}
 	int whitePins= 0; int blackPins=0;
 	int white, black;
 
@@ -203,8 +165,6 @@ bool checkPins(Code cd, History *hs){
 				black++;
 				bckCode2[k] = empty;	
 				bckCode[k] = empty;
-				printCode(cd);
-				printLine();
 			}
 		}
 		for(int l=0; l<4; l++){
@@ -227,9 +187,6 @@ bool checkPins(Code cd, History *hs){
 			}	
 		}
 		if(white != whitePins || black != blackPins){
-//			printf("%i,%i ", white, black);
-//			printf("[%i,%i]", whitePins, blackPins);
-//			printTab();
 			return false;
 		}
 	}

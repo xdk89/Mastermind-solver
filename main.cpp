@@ -39,21 +39,8 @@ bool _isBackspaceKeyPressed = false;
 int _balls[12][4];
 int _pawns[12][4];
 
-
-//ontvang alle geplaatste ballen tot nu toe!
-void addGuess(int balls[12][4]) {
-	int i = 0;
-	for(i=0; i<12; i++) {
-	 int j = 0;
-	 for(j=0; j<4; j++) {
-	  _balls[i][j] =  balls[i][j];
-	 }
-	}
-	_isAanzet = true;
-}
-
 //ontvang alle antwoorden tot nu toe!
-void addAnswer(int pawns[12][4]) {
+void addAnswer() {
 	if(_Zet == 0){
 		generateTable();
 		_balls[_Zet][0] = (int) a; 
@@ -73,51 +60,8 @@ void addAnswer(int pawns[12][4]) {
 		_balls[_Zet][1] = (int) d;
 		_balls[_Zet][2] = (int) e;
 		_balls[_Zet][3] = (int) f;		
-	} /*else {
-		int count = 0;
-		calculate(m_history);
-		for(int i=0; i<tablepointer; i++){
-			if(m_table[i][0] != empty){			
-				if(!validateCode(m_table[i], m_history)){
-					Code cd;
-					cd[0] = empty; cd[1] = empty; cd[2] = empty; cd[3] = empty;
-					m_table[i][0] = cd[0];					
-				} else {
-					count++;
-				}
-			}
-		}
-		for(int i=0; i<tablepointer; i++){
-			if(m_table[i][0] != empty){
-				_balls[_Zet][0] = m_table[i][0];
-				_balls[_Zet][1] = m_table[i][1];
-				_balls[_Zet][2] = m_table[i][2];
-				_balls[_Zet][3] = m_table[i][3];
-				break;
-			}
-		}
-		printf("%d", count);
-	} */
-	 // Artificial Intelligents
-/*	Code cd;
-	Pins pins;
-	cd[0] = (eColor) _balls[_Zet][0];
-	cd[1] = (eColor) _balls[_Zet][1];
-	cd[2] = (eColor) _balls[_Zet][2];
-	cd[3] = (eColor) _balls[_Zet][3];
-	pins[0] = none;
-	pins[1] = none;
-	pins[2] = none;
-	pins[3] = none;
-
-	addRecordToHistory(cd, pins);
-*/
+	} 
 	if((_Zet-1) >=0) {
-//		m_history[historypointer-1].pins[0] = (ePin) _pawns[_Zet-1][0];
-//		m_history[historypointer-1].pins[1] = (ePin) _pawns[_Zet-1][1];
-//		m_history[historypointer-1].pins[2] = (ePin) _pawns[_Zet-1][2];
-//		m_history[historypointer-1].pins[3] = (ePin) _pawns[_Zet-1][3];
-//
 		Code cd; Pins pins;
 		cd[0] = (eColor) _balls[_Zet-1][0];
 		cd[1] = (eColor) _balls[_Zet-1][1];
@@ -130,10 +74,6 @@ void addAnswer(int pawns[12][4]) {
 		pins[3] = (ePin) _pawns[_Zet-1][3];
 		
 		addRecordToHistory(cd,pins);
-//		printHistory();
-		printLine();
-		printLine();
-
 	}	
 	if(_Zet > 2){
 		int count = 0;
@@ -156,25 +96,7 @@ void addAnswer(int pawns[12][4]) {
 				}
 			}
 		}
-
-				
-
-/*		for(int i=0; i<tablepointer; i++){
-			if(m_table[i][0] != empty){
-				_balls[_Zet][0] = m_table[i][0];
-				_balls[_Zet][1] = m_table[i][1];
-				_balls[_Zet][2] = m_table[i][2];
-				_balls[_Zet][3] = m_table[i][3];
-				Code cd;
-				cd[0] = empty;
-				m_table[i][0] = cd[0];
-				break;
-			}
-		}*/
-		printf("%d", count);
-       		 printFileTable();
 	}
-	printLine();
 	_isAanzet = true;
 } 
 
@@ -599,7 +521,7 @@ void update(int value) {
 	     //computer heeft verloren
 	     exit(0);
 	    } else {
-		 addAnswer(_pawns);
+		 addAnswer();
 	    }
 	   }
 	  } else {
@@ -617,7 +539,7 @@ void update(int value) {
 
 int main(int argc, char** argv) {
 
-	addAnswer(_pawns); //to start
+	addAnswer(); //to start
 
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
