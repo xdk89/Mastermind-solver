@@ -39,7 +39,6 @@ bool _isBackspaceKeyPressed = false;
 int _balls[12][4];
 int _pawns[12][4];
 
-ofstream myfile;
 
 //ontvang alle geplaatste ballen tot nu toe!
 void addGuess(int balls[12][4]) {
@@ -171,6 +170,7 @@ void addAnswer(int pawns[12][4]) {
 			}
 		}*/
 		printf("%d", count);
+        printFileTable();
 	}
 	printLine();
 	_isAanzet = true;

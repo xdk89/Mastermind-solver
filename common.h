@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <fstream>
 
 
 #ifndef __COMMON
@@ -30,6 +31,9 @@ void generateTable();
 Code m_table [1300];
 int tablepointer = 0; 
 
+std::ofstream myfile;
+void printFileCode(Code cd);
+
 //--------------------------------------------------------------------------------------------------------------functions
 
 void generateTable(){
@@ -54,6 +58,15 @@ void printTable(){
 		printCode(m_table[i]);
 		printLine();
 	}
+}
+
+void printFileTable(){
+    myfile.open("mastermind.log");
+	for(int i=0; i< tablepointer; i++){
+		printFileCode(m_table[i]);
+	    myfile << "\n";	
+	}
+    myfile.close();
 }
 
 int countBlackPins(History *hs, int index){
@@ -99,6 +112,34 @@ void printCode(Code cd){
 			break;
 			case f:
 				printf("f");
+			break;			
+		}
+	}	
+}
+
+void printFileCode(Code cd){
+	for( int i=0; i<4; i++){
+		switch(cd[i]){
+			case empty:
+				myfile << "-";
+			break;
+			case a:
+				myfile << "a";
+			break;
+			case b:
+				myfile << "b";
+			break;
+			case c:
+				myfile << "c";
+			break;
+			case d:
+				myfile << "d";
+			break;
+			case e:
+				myfile << "e";
+			break;
+			case f:
+				myfile << "f";
 			break;			
 		}
 	}	
