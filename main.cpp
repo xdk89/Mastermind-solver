@@ -5,7 +5,6 @@
 #include "imageloader.h"
 #include "common.h"
 #include "validator.h"
-#include "calculator.h"
 
 
 using namespace std;
@@ -77,21 +76,16 @@ void addAnswer() {
 	}	
 	if(_Zet > 2){
 		int count = 0;
-		calculate(m_history);
 		for(int i=0; i<tablepointer; i++){
 			if(m_table[i][0] != empty){
 				if(!validateCode(m_table[i], m_history)){
-					Code cd;
-					cd[0] = empty;
-					m_table[i][0] = cd[0];
+					m_table[i][0] = empty;
 				} else {					
 					_balls[_Zet][0] = m_table[i][0];
 					_balls[_Zet][1] = m_table[i][1];
 					_balls[_Zet][2] = m_table[i][2];
 					_balls[_Zet][3] = m_table[i][3];
-					Code cd;
-					cd[0] = empty;
-					m_table[i][0] = cd[0];
+					m_table[i][0] = empty;
 					break;
 				}
 			}
@@ -160,7 +154,6 @@ void initRendering() {
 	glEnable(GL_LIGHT0);
 	glEnable(GL_LIGHT1);
 	glEnable(GL_NORMALIZE);
-	//glEnable(GL_SMOOTH);
 	glClearColor(0.0f, 0.05f, 0.15f, 1.0f);
 
 	Image* image = loadBMP("board.bmp");
@@ -399,11 +392,6 @@ void drawScene() {
 
 	   //draw topLayer
 	  float _tZ = (_Rows/2.0f)*1.2f;
-	 //glDisable(GL_TEXTURE_2D);
-	 //glEnable(GL_TEXTURE_2D);
-	  //glBindTexture(GL_TEXTURE_2D, _textureRoof);
-	  //glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-	  //glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 	  for(int i = 0; i < _Rows; i++) {
 	   drawCube(-3.4f, 0.0f, _tZ, 3.4f, 0.3f, _tZ-0.15f);
 	   drawCube(-3.4f, 0.0f, _tZ-1.05f, 3.4f, 0.3f, _tZ-1.2f);

@@ -24,7 +24,6 @@ void printTab();
 void printHistory();
 
 void addRecordToHistory(Code, Pins);
-void addRecordToHistory(eColor, eColor, eColor, eColor, ePin, ePin, ePin, ePin);
 
 void generateTable(); 
 
@@ -87,16 +86,6 @@ int countWhitePins(History *hs, int index){
 		}
 	}
 	return count;
-}
-
-int countEmptyPins(History *hs, int index){
-	int count = 0;
-	for(int i=0; i<4; i++){
-		if(hs[index].pins[i] == none){
-			count++;
-		}
-	}
-	count;
 }
 
 void printCode(Code cd){
@@ -198,17 +187,5 @@ void addRecordToHistory(Code cd, Pins pn){
 	m_history[index].pins[1] = pn[1];
 	m_history[index].pins[2] = pn[2];
 	m_history[index].pins[3] = pn[3];	
-}
-
-void addRecordToHistory(eColor e1, eColor e2, eColor e3, eColor e4, ePin p1, ePin p2, ePin p3, ePin p4){
-	int index = ++historypointer;
-	m_history[index].code[0] = e1;
-	m_history[index].code[1] = e2;
-	m_history[index].code[2] = e3;
-	m_history[index].code[3] = e4;
-	m_history[index].pins[0] = p1;
-	m_history[index].pins[1] = p2;
-	m_history[index].pins[2] = p3;
-	m_history[index].pins[3] = p4;
 }
 #endif
