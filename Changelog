@@ -1,0 +1,259 @@
+commit 2d70279e9e65ae6168f7ddeaa79e99f57f9e635c
+Author: Rick Poot <rpoot@chopper.localdomain>
+Date:   Thu Oct 28 08:38:13 2010 +0200
+
+    Presentatie gemaakt
+
+commit afe90fc0d38b16d901930a9dbf40cbe84fff2fc6
+Author: xander <mister-x89@hotmail.com>
+Date:   Wed Oct 27 21:12:12 2010 +0000
+
+    lastversion
+
+commit 49f929ce8eacff609592963088f18c34fcfdbe68
+Author: xander <mister-x89@hotmail.com>
+Date:   Wed Oct 27 15:48:06 2010 +0000
+
+    jippie
+
+commit 37b531b4a57fab75dd1224a0f602e8ca00dc7205
+Merge: 9913a88 1a12eb9
+Author: xander <mister-x89@hotmail.com>
+Date:   Wed Oct 27 12:11:08 2010 +0000
+
+    Merge branch 'master' of github.com:rickpt/mastermind
+
+commit 9913a88cd9361bef890a7ed86b812a8162cda9c1
+Author: xander <mister-x89@hotmail.com>
+Date:   Wed Oct 27 12:10:43 2010 +0000
+
+    ?
+
+commit 135d2d751b102266af371df8c514cffd682dd9a6
+Merge: 11524ce 5515d01
+Author: xander <mister-x89@hotmail.com>
+Date:   Wed Oct 27 11:35:44 2010 +0000
+
+    Merge branch 'master' of github.com:rickpt/mastermind
+
+commit 11524ce84ec47a42cdf750da347a24cbfd959580
+Merge: 6d74676 4f0e415
+Author: xander <mister-x89@hotmail.com>
+Date:   Wed Oct 27 11:30:52 2010 +0000
+
+    improve history
+
+commit 6d74676c5b1523b5fd36013a26ee73e7aab25aa6
+Author: xander <mister-x89@hotmail.com>
+Date:   Wed Oct 27 11:28:15 2010 +0000
+
+    improve history
+
+commit 1a12eb975374897a7ae78fa882ed75ac109713f8
+Author: Rick Poot <rpoot@chopper.localdomain>
+Date:   Wed Oct 27 11:55:48 2010 +0200
+
+    	modified:   makefile
+
+commit 7241d81950a0ca3881460e05e47bc8b7e471d856
+Author: Rick Poot <rpoot@chopper.localdomain>
+Date:   Wed Oct 27 11:54:54 2010 +0200
+
+    	modified:   README
+
+commit 5515d019dd62fd62fa9527db17159b41a17ae1b1
+Author: Rick Poot <rpoot@chopper.localdomain>
+Date:   Wed Oct 27 11:32:23 2010 +0200
+
+    Updated .gitignore
+
+commit 4f0e415f5bf4440401a18d01821c9d8cda69c002
+Author: Rick Poot <rpoot@chopper.localdomain>
+Date:   Wed Oct 27 11:24:48 2010 +0200
+
+    added printfiletable() and pintfilecode
+
+commit c46c546404e7d19d30c0f78c0a7d56b28974e7c4
+Author: Rick Poot <rpoot@chopper.localdomain>
+Date:   Wed Oct 27 10:57:20 2010 +0200
+
+    remover vimrw
+
+commit 61b297ab349e359839e71990919417aa0a5e5f84
+Author: Rick Poot <rpoot@chopper.localdomain>
+Date:   Wed Oct 27 10:51:39 2010 +0200
+
+    Revert "Revert "vimrc""
+    
+    This reverts commit 53906af7989a34a232e7bec3bb720492ca0ad712.
+
+commit ae1d6c984b1b2a05a0dfe7af784edf0e3c36610f
+Author: Rick Poot <rpoot@chopper.localdomain>
+Date:   Wed Oct 27 10:50:57 2010 +0200
+
+    Revert "bump"
+    
+    This reverts commit 38fdb7c286252524fa5ec213b11bc3d1613c10a3.
+
+commit 53906af7989a34a232e7bec3bb720492ca0ad712
+Author: Rick Poot <rpoot@chopper.localdomain>
+Date:   Wed Oct 27 10:45:35 2010 +0200
+
+    Revert "vimrc"
+    
+    This reverts commit 563d3aa54a675d48e6c9e70dbc9f7979d897f6ac.
+
+commit 38fdb7c286252524fa5ec213b11bc3d1613c10a3
+Author: Rick Poot <rpoot@chopper.localdomain>
+Date:   Wed Oct 27 10:26:50 2010 +0200
+
+    bump
+
+commit 563d3aa54a675d48e6c9e70dbc9f7979d897f6ac
+Author: Rick Poot <rpoot@chopper.localdomain>
+Date:   Wed Oct 27 10:16:04 2010 +0200
+
+    vimrc
+
+commit aceed5b78a02accd8f64479ae18f327b7170f819
+Author: Rick Poot <rpoot@chopper.localdomain>
+Date:   Wed Oct 27 10:06:59 2010 +0200
+
+    Finished makefile
+
+commit 90e5965e7d2a3e827f6d3810116b717a093638b7
+Merge: e7579ea 8cc889f
+Author: xander <mister-x89@hotmail.com>
+Date:   Wed Oct 27 09:59:50 2010 +0000
+
+    Merge branch 'master' of github.com:rickpt/mastermind
+
+commit e7579ea2fc591cd79d7caf4e300fa54ab163d524
+Author: xander <mister-x89@hotmail.com>
+Date:   Wed Oct 27 09:59:24 2010 +0000
+
+    blabbla
+
+commit bcd4b425a6f37e3f247cd0c1f17a480e7837291e
+Merge: edfabea a39b20f
+Author: xander <mister-x89@hotmail.com>
+Date:   Wed Oct 27 09:43:39 2010 +0000
+
+    Merge branch 'master' of github.com:rickpt/mastermind
+
+commit edfabeafe942b36019dad17d4007060552ea74bf
+Author: xander <mister-x89@hotmail.com>
+Date:   Wed Oct 27 09:42:39 2010 +0000
+
+    macdonalds
+
+commit 8cc889f681213d04dc1527367b17fc2e8404da01
+Author: Rick Poot <rpoot@chopper.localdomain>
+Date:   Wed Oct 27 09:57:58 2010 +0200
+
+    remover idiotinc printf
+
+commit d9edf06d3cb2231c80a8997a5d6f28fa88d3cfde
+Author: Rick Poot <rpoot@chopper.localdomain>
+Date:   Wed Oct 27 09:45:31 2010 +0200
+
+    add micha's email
+
+commit b36d15d60e58f8bc3804fbd325bb979439bc6ef3
+Author: xander <mister-x89@hotmail.com>
+Date:   Tue Oct 26 17:34:44 2010 +0000
+
+    hello
+
+commit b4562b2098ecf6dfc96cd6756b4f46f4978f4997
+Author: xander <mister-x89@hotmail.com>
+Date:   Tue Oct 26 15:01:14 2010 +0000
+
+    werkende pins
+
+commit a16eef7fd7031541395056c79e89a23d3852647d
+Merge: e040d37 3d8da96
+Author: xander <mister-x89@hotmail.com>
+Date:   Tue Oct 26 13:51:04 2010 +0000
+
+    Merge branch 'master' of github.com:rickpt/mastermind
+
+commit e040d3758e8681d7dd18008101c86a2ed40f99e0
+Author: xander <mister-x89@hotmail.com>
+Date:   Tue Oct 26 13:50:28 2010 +0000
+
+    a
+
+commit da37141605846518c545e4df5a3cc790824a9257
+Author: xander <mister-x89@hotmail.com>
+Date:   Tue Oct 26 13:17:02 2010 +0000
+
+    hello
+
+commit a39b20f0db098d1a320abbeb3fff43e61f81566c
+Author: Rick Poot <rpoot@chopper.localdomain>
+Date:   Tue Oct 26 15:12:02 2010 +0200
+
+    made a readme
+
+commit 3a2f07dc814c9274de3b89cb314204a7950bcbc9
+Merge: 2016ccc b4562b2
+Author: Rick Poot <rpoot@chopper.localdomain>
+Date:   Tue Oct 26 15:11:21 2010 +0200
+
+    Merge branch 'master' of github.com:rickpt/mastermind
+
+commit 2016ccc8474aedb2c32dd1336da782f0803ee0f3
+Author: Rick Poot <rpoot@chopper.localdomain>
+Date:   Tue Oct 26 15:10:43 2010 +0200
+
+    made a readme
+
+commit f1ceb479bbdfe0de7131c044e6d7491c3677b40e
+Merge: 0673a29 7f096b4
+Author: xander <mister-x89@hotmail.com>
+Date:   Tue Oct 26 13:08:43 2010 +0000
+
+    Merge branch 'master' of github.com:rickpt/mastermind
+
+commit 0673a2982a41eda15847f7add498b696edcf744d
+Author: xander <xander@myhost.(none)>
+Date:   Tue Oct 26 13:07:13 2010 +0000
+
+    	modified:   main.cpp
+
+commit 3d8da9652f0aa7b343e933d40036ade4166ec799
+Author: Rick Poot <rpoot@chopper.localdomain>
+Date:   Tue Oct 26 13:47:56 2010 +0200
+
+    Deleted vs stuff
+
+commit 8bdbad974618027240fdd3512e57346edd50a7bb
+Author: Rick Poot <rpoot@chopper.localdomain>
+Date:   Tue Oct 26 13:45:53 2010 +0200
+
+    Finished makefile
+
+commit 7f096b4c394749e2d5c364431dc0bbff02e4b45d
+Author: Rick Poot <rpoot@chopper.localdomain>
+Date:   Tue Oct 26 13:05:10 2010 +0200
+
+    bump
+
+commit f15da4ca9d7e68679a90a3f90c6f5a616faa7bc2
+Author: Rick Poot <rpoot@chopper.localdomain>
+Date:   Tue Oct 26 12:56:38 2010 +0200
+
+    bump
+
+commit 72889f444bf80080cd439f56714e2747cb489de0
+Author: Rick Poot <rpoot@chopper.localdomain>
+Date:   Tue Oct 26 12:34:38 2010 +0200
+
+    bump
+
+commit 16f5363009babdb5a3a599de82840976df6bca0f
+Author: xander <xander@myhost.(none)>
+Date:   Tue Oct 26 12:27:59 2010 +0000
+
+    initial commit
