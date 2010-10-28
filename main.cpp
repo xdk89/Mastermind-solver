@@ -74,8 +74,9 @@ void addAnswer() {
 		
 		addRecordToHistory(cd,pins);
 	}	
+	bool isPossibility = true;
 	if(_Zet > 2){
-		int count = 0;
+		isPossibility = false;
 		for(int i=0; i<tablepointer; i++){
 			if(m_table[i][0] != empty){
 				if(!validateCode(m_table[i], m_history)){
@@ -86,12 +87,13 @@ void addAnswer() {
 					_balls[_Zet][2] = m_table[i][2];
 					_balls[_Zet][3] = m_table[i][3];
 					m_table[i][0] = empty;
+					isPossibility = true;	
 					break;
 				}
 			}
 		}
 	}
-	_isAanzet = true;
+	_isAanzet = isPossibility;
 } 
 
 void handleKeypress(unsigned char key, int x, int y) {
@@ -503,11 +505,12 @@ void update(int value) {
 	   _Position = 0;
 	   if(_pawns[_Zet - 1][0] == 2 && _pawns[_Zet - 1][1] == 2 && _pawns[_Zet - 1][2] == 2 && _pawns[_Zet - 1][3] == 2) {
 		//computer heeft gewonnen
-		exit(0);
+		//exit(0);
+		_isAanzet == false;
 	   } else {
 		if(_Zet >= _Rows) {
 	     //computer heeft verloren
-	     exit(0);
+	    	 _isAanzet == false;
 	    } else {
 		 addAnswer();
 	    }

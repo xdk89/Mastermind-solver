@@ -11,7 +11,7 @@ bool validateCode(Code cd, History *hs){
 	int whitePins= 0; int blackPins=0;
 	int white, black;
 
-	for(int i=0; i <= historypointer; i++){
+/*	for(int i=0; i <= historypointer; i++){
 		whitePins = countWhitePins(hs,i);
 		blackPins = countBlackPins(hs,i);
 		white = 0;
@@ -58,6 +58,37 @@ bool validateCode(Code cd, History *hs){
 		if(white != whitePins || black != blackPins){
 			return false;
 		}
-	}
+	}*/
+
+
+
+	for(int i=0 ; i<=historypointer; i++){
+		bool codeCan[4] = { true, true, true, true };
+		bool  hisCan[4] = { true, true, true, true };
+		whitePins = countWhitePins(hs,i);
+		blackPins = countBlackPins(hs,i);
+		white=0; black=0;
+		for(int k=0; k<4; k++){
+			if(cd[k] == hs[i].code[k]){
+				black++;
+				codeCan[k] = false;
+				hisCan[k]  = false;
+			}
+		}
+		for(int k=0; k<4; k++){
+//			if(codeCan[k] == true){
+				for(int l=0; l<4; l++){
+					if(cd[k] == hs[i].code[l] && hisCan[l] == true && codeCan[k] == true){
+						white++;
+						hisCan[l] = false;
+					}
+				}
+//			}
+
+		} 
+		if(white != whitePins || black != blackPins){
+			return false;
+		}
+	}		
 	return true;
 }
